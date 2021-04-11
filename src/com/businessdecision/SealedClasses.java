@@ -3,6 +3,7 @@ package com.businessdecision;
 // - Untersuche die folgende Klassenhierarchie.
 //   Was passiert, wenn eine Klasse aus der permits-Klausel entfernt wird?
 // - Was passiert, wenn das final von Circle oder das non-sealed von Square entfernt wird?
+// - Kannst du eine anonyme Klasse erzeugen, die eine Instanz von Shape ist?
 // - Wenn (s instanceof Shape) == true, ist dann in jedem Fall auch
 //   (s instanceof Circle || s instanceof Square || s instanceof Rectangle) == true?
 //   (Hint: ja, falls noch eine kleine Änderung an Shape gemacht wird.)

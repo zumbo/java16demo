@@ -34,4 +34,19 @@ public class SealedClasses {
         }
         System.out.println(area);
     }
+
+    @Test
+    void demo2() {
+        Shape shape = Math.random() > 0.5 ? new Circle() : new Rectangle();
+        System.out.println(calculate(shape));
+    }
+
+    double calculate(Shape shape) {
+        if (shape instanceof Circle c) {
+            return Math.pow(c.radius(), 2) * Math.PI;
+        } else if (shape instanceof Rectangle r) {
+            return r.a() * r.b();
+        }
+        return 0; // Tja... Sollte laut https://openjdk.java.net/jeps/397 nicht nötig sein.
+    }
 }

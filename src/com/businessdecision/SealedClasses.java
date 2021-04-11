@@ -1,6 +1,7 @@
 package com.businessdecision;
 
-// - Untersuche die Klassenhierarchie. Was passiert, wenn eine Klasse aus der permits-Klausel entfernt wird?
+// - Untersuche die folgende Klassenhierarchie.
+//   Was passiert, wenn eine Klasse aus der permits-Klausel entfernt wird?
 // - Was passiert, wenn das final von Circle oder das non-sealed von Square entfernt wird?
 // - Wenn (s instanceof Shape) == true, ist dann in jedem Fall auch
 //   (s instanceof Circle || s instanceof Square || s instanceof Rectangle) == true?
@@ -29,3 +30,9 @@ sealed class Rectangle extends Shape permits FilledRectangle {
 final class FilledRectangle extends Rectangle {
     public int red, green, blue;
 }
+
+// TODO:
+// Schaue den Beispielcode zu Sealed Classes unter
+// https://advancedweb.hu/a-categorized-list-of-all-java-and-jvm-features-since-jdk-8-to-16/
+// an. Schaffst du es, ihn zum Laufen zu bringen?
+// Hint: Es wird an mehr als einer (oder zwei...) Stellen klemmen.

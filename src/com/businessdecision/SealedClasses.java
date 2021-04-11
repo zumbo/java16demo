@@ -32,8 +32,8 @@ final class FilledRectangle extends Rectangle {
     public int red, green, blue;
 }
 
+// Diese Aufgabe als letztes angehen. Hier ist Java noch eine rechte Baustelle...
 // TODO:
 // Schaue den Beispielcode zu Sealed Classes unter
 // https://advancedweb.hu/a-categorized-list-of-all-java-and-jvm-features-since-jdk-8-to-16/
 // an. Schaffst du es, ihn zum Laufen zu bringen?
-// Hint: Es wird an mehr als einer (oder zwei...) Stellen klemmen.

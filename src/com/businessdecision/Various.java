@@ -11,7 +11,5 @@ public class Various {
         // TODO: Wie lässt sich das seit Java 16 vereinfachen?
         // Mit IntelliJ löst sich diese Aufgabe praktisch von alleine...
         List<Integer> listOld = intStream.collect(Collectors.toUnmodifiableList());
-
-        List<Integer> listNew = intStream.toList();
     }
 }

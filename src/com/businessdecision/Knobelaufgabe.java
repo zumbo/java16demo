@@ -5,13 +5,10 @@ import org.junit.jupiter.api.Test;
 public class Knobelaufgabe {
     @Test
     void test() {
-        Object animal = Math.random() > 0.5 ? new Pegasus() : new Phoenix();
-        // TODO: Bringe die zwei nachfolgenden Aufrufe zum funktionieren, und zwar ohne die Typ-Hierarchie zu ändern,
-        // und auch nicht die Aufrufe (ausser natürlich dem Entfernen der Kommentarzeichen).
-        // Hint: In TypeScript würde man hier einen Union Type verwenden, aber das gibt es ja in Java nicht, oder??
+        var animal = Math.random() > 0.5 ? new Pegasus() : new Phoenix();
 
-        // animal.doSomethingMythical();
-        // animal.fly();
+        animal.doSomethingMythical();
+        animal.fly();
     }
 }
 

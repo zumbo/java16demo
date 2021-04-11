@@ -1,39 +1,37 @@
 package com.businessdecision;
 
-// - Untersuche die folgende Klassenhierarchie.
-//   Was passiert, wenn eine Klasse aus der permits-Klausel entfernt wird?
-// - Was passiert, wenn das final von Circle oder das non-sealed von Square entfernt wird?
-// - Kannst du eine anonyme Klasse erzeugen, die eine Instanz von Shape ist?
-// - Wenn (s instanceof Shape) == true, ist dann in jedem Fall auch
-//   (s instanceof Circle || s instanceof Square || s instanceof Rectangle) == true?
-//   (Hint: ja, falls noch eine kleine Änderung an Shape gemacht wird.)
-// - Vorausgesetzt, untenstehender Code wird nicht verändert (und auch nicht per Reflection manipuliert):
-//   Ist dann garantiert, dass niemand diese Klassenhierarchie erweitert?
-// - Was passiert, wenn eine der Klassen in eine andere Datei verschoben wird?
-// - Was passiert, wenn eine der Klassen in ein anderes Package verschoben wird?
+import org.junit.jupiter.api.Test;
 
-sealed class Shape
-        permits Circle, Square, Rectangle {
+abstract sealed class Shape
+        permits Circle, Rectangle {
 }
 
 final class Circle extends Shape {
-    public float radius;
+    double radius() {
+        return 42.0;
+    }
+}
+final class Rectangle extends Shape {
+    double a() {
+        return 3.0;
+    }
+    double b() {
+        return 5.0;
+    }
 }
 
-non-sealed class Square extends Shape {
-    public double side;
+public class SealedClasses {
+    @Test
+    void demo() {
+        Shape shape = Math.random() > 0.5 ? new Circle() : new Rectangle();
+        double area;
+        if (shape instanceof Circle c) {
+            area = Math.pow(c.radius(), 2) * Math.PI;
+        // } else if (shape instanceof Rectangle r) {
+        } else {
+            Rectangle r = (Rectangle) shape;
+            area = r.a() * r.b();
+        }
+        System.out.println(area);
+    }
 }
-
-sealed class Rectangle extends Shape permits FilledRectangle {
-    public double length, width;
-}
-
-final class FilledRectangle extends Rectangle {
-    public int red, green, blue;
-}
-
-// TODO:
-// Schaue den Beispielcode zu Sealed Classes unter
-// https://advancedweb.hu/a-categorized-list-of-all-java-and-jvm-features-since-jdk-8-to-16/
-// an. Schaffst du es, ihn zum Laufen zu bringen?
-// Hint: Es wird an mehr als einer (oder zwei...) Stellen klemmen.

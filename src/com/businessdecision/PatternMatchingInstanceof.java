@@ -4,12 +4,9 @@ public class PatternMatchingInstanceof {
 
     public interface Shape {
         public static double getPerimeterOld(Shape shape) throws IllegalArgumentException {
-            // TODO: Wie lässt sich dieser Code in Java 16 einfacher schreiben?
-            if (shape instanceof Rectangle) {
-                Rectangle r = (Rectangle) shape;
+            if (shape instanceof Rectangle r) {
                 return 2 * r.length() + 2 * r.width();
-            } else if (shape instanceof Circle) {
-                Circle c = (Circle) shape;
+            } else if (shape instanceof Circle c) {
                 return 2 * c.radius() * Math.PI;
             } else {
                 throw new IllegalArgumentException("Unrecognized shape");

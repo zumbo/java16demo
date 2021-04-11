@@ -21,9 +21,6 @@ public class RecordsTest {
 
     @Test
     void recordTest() {
-        // TODO: Implementiere RectangleRecord mit der Funktionalität von RectangleClassic,
-        // aber als Record. Entkommentiere dann diesen Test und führe ihn aus.
-        /*
         RectangleRecord rec = new RectangleRecord(3.0, 5.0);
         assertEquals(15.0, rec.area(), 0.001);
 
@@ -31,7 +28,15 @@ public class RecordsTest {
         assertEquals(4.0, square.length(), 0.001);
         assertEquals(4.0, square.width(), 0.001);
         assertEquals(16.0, square.area(), 0.001);
-         */
+    }
+}
+
+record RectangleRecord(double length, double width) {
+    RectangleRecord(double length) {
+        this(length, length);
+    }
+    double area() {
+        return length * width;
     }
 }
 

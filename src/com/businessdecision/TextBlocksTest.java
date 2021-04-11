@@ -14,16 +14,8 @@ class TextBlocksTest {
         System.out.println(html);
     }
 
-    // TODO: Schreibe diese Textausgabe mit Textblocks.
-    // Welche Möglichkeiten gibt es, den Quellcode (bei gleichbleibendem Outputtext) zu formatieren?
-    // Was schlägt die Standardformatierung von IntelliJ (Ctrl-Alt-L) vor?
-    // TODO: Schreibe die gleiche Textausgabe, aber um vier Leerzeichen eingerückt.
-    // Wie hilft IntelliJ dabei, die Einrückung sichtbar zu machen?
-    // TODO: Schreibe die gleiche Textausgabe, aber um vier Leerzeichen eingerückt *und* ohne abschliessenden Zeilenumbruch.
-    // Was passiert, wenn man in der Einrückung Spaces und Tabs mischt? (IntelliJ macht einem das [zu recht] schwer.)
-
     @Test
-    void demo1() {
+    void demoOhneInputWhitespace() {
         String html = """
 <html>
     <body>
@@ -35,19 +27,7 @@ class TextBlocksTest {
     }
 
     @Test
-    void demo2() {
-        String html = """
-                    <html>
-                        <body>
-                            <p>Hello World.</p>
-                        </body>
-                    </html>
-                """;
-        System.out.println(html);
-    }
-
-    @Test
-    void demo3() {
+    void demoMitInputWhitespace() {
         String html = """
                 <html>
                     <body>
@@ -59,29 +39,26 @@ class TextBlocksTest {
     }
 
     @Test
-    void aufgabe() {
-        String test = """
-                Lorem 
-                ipsum
-                dolor
-                sit
-                amet""";
-        System.out.println(test);
+    void demoEingerückt() {
+        String html = """
+                    <html>
+                        <body>
+                            <p>Hello World.</p>
+                        </body>
+                    </html>
+                """;
+        System.out.println(html);
     }
 
     @Test
-    void lösung() {
-        String test = """
-                Lorem 
-                ipsum
-                dolor
-                sit
-                amet""".indent(4);
-        System.out.println(test);
+    void demoEingerücktOhneAbschliessendesNewline() {
+        String html = """
+                    <html>
+                        <body>
+                            <p>Hello World.</p>
+                        </body>
+                    </html>""".indent(4);
+        System.out.println(html);
     }
-
-    // Aufgabe: Trailing whitespace
-
-    // Do not mix with tabs!
 }
 
